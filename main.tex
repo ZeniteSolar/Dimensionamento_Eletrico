@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{pythonhighlight}
+\usepackage{pgfplotstable}
+ \usepackage{lscape}
+\graphicspath{ {./images/} }
+
+
+\title{Memória de cálculo do esquema elétrico do barco}
+
+\date{9 de Janeiro de 2020}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+\vbox{
+\centering
+\includegraphics[width=50mm,scale=0.5]{logo_barco_mono.png}
+\maketitle
+}
+
+\maketitle
+
+\begin{landscape}
+\begin{table}[]
+\begin{tabular}{lllllll}
+Código & Designação                   & Nó origem           & Nó destino       & Comprimento (m) & Tensão origem (V) & Corrente Nominal (A) \\
+101    & negativo motor               & chave do motor      & motor            & 0.6             & 36                & 98                   \\
+102    & positivo motor               & MAM17               & motor            & 1.7             & 36                & 98                   \\
+103    & negativo motor               & bateria             & chave do motor   & 1.7             & 36                & 98                   \\
+104    & positivo motor               & bateria             & MCS17            & 0.3             & 36                & 98                   \\
+105    & positivo motor               & MCS17               & MAM17            & 0.3             & 36                & 98                   \\
+106    &                              &                     &                  &                 & 36                & 98                   \\
+107    &                              &                     &                  &                 & 36                & 98                   \\
+108    & positivo do rádio            & rádio               & bateria auxiliar & 6               & 36                & 8                    \\
+109    & negativo do rádio            & rádio               & bateria auxiliar & 6               & 36                & 8                    \\
+201    & positivo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+202    & negativo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+203    & positivo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+204    & negativo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+205    & positivo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+206    & negativo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+207    & positivo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+208    & negativo painel fotovoltaico & painel fotovoltaico & MCC18            & 1.5             & 31.1              & 8.37                 \\
+209    & positivo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+210    & negativo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+211    & positivo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+212    & negativo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+213    & positivo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+214    & negativo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+215    & positivo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                   \\
+216    & negativo painel fotovoltaico & MCC18               & MCS17            & 0.8             & 31.1              & 15                  
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[]
+\begin{tabular}{lllllll}
+Código & Corrente Máxima (A) & Área mínima necessária pelas regras (mm²) & Resistência 20°C (Ω) & Resistência 50°C (Ω) & \begin{tabular}[c]{@{}l@{}}Potência perdida nominal \\ (W)\end{tabular} &  \\
+101    & 150                 & 50                                        & 2.06E-04             & 2.31E-04             & 2.22E+00                                                                &  \\
+102    & 150                 & 50                                        & 5.85E-04             & 6.56E-04             & 6.30E+00                                                                &  \\
+103    & 150                 & 50                                        & 5.85E-04             & 6.56E-04             & 6.30E+00                                                                &  \\
+104    & 150                 & 50                                        & 1.03E-04             & 1.16E-04             & 1.11E+00                                                                &  \\
+105    & 150                 & 50                                        & 1.03E-04             & 1.16E-04             & 1.11E+00                                                                &  \\
+106    & 150                 & 50                                        & 0.00E+00             & 0.00E+00             & 0.00E+00                                                                &  \\
+107    & 150                 & 50                                        & 0.00E+00             & 0.00E+00             & 0.00E+00                                                                &  \\
+108    & 10                  & 1.5                                       & 6.88E-02             & 7.71E-02             & 4.94E+00                                                                &  \\
+109    & 10                  & 1.5                                       & 6.88E-02             & 7.71E-02             & 4.94E+00                                                                &  \\
+201    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+202    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+203    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+204    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+205    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+206    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+207    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+208    & 8.98                & 1.5                                       & 1.72E-02             & 1.93E-02             & 1.35E+00                                                                &  \\
+209    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+210    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+211    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+212    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+213    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+214    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+215    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                &  \\
+216    & 20                  & 2.5                                       & 5.50E-03             & 6.17E-03             & 1.39E+00                                                                & 
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[]
+\begin{tabular}{llllll}
+Código & Potência perdida máxima (W) & Eficiência (\%) & Queda de Tensão (V) & Queda de Tensão Percentual (\%) & Massa do cabo (Kg) \\
+101    & 5.21E+00                    & 99.85\%         & 2.27E-02            & 0.06\%                          & 0.2988             \\
+102    & 1.48E+01                    & 99.58\%         & 6.43E-02            & 0.18\%                          & 0.8466             \\
+103    & 1.48E+01                    & 99.58\%         & 6.43E-02            & 0.18\%                          & 0.8466             \\
+104    & 2.60E+00                    & 99.93\%         & 1.13E-02            & 0.03\%                          & 0.1494             \\
+105    & 2.60E+00                    & 99.93\%         & 1.13E-02            & 0.03\%                          & 0.1494             \\
+106    & 0.00E+00                    & 100.00\%        & 0.00E+00            & 0.00\%                          & 0                  \\
+107    & 0.00E+00                    & 100.00\%        & 0.00E+00            & 0.00\%                          & 0                  \\
+108    & 7.71E+00                    & 97.32\%         & 6.17E-01            & 1.71\%                          & 0.1176             \\
+109    & 7.71E+00                    & 97.32\%         & 6.17E-01            & 1.71\%                          & 0.1176             \\
+201    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+202    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+203    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+204    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+205    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+206    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+207    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+208    & 1.56E+00                    & 99.40\%         & 1.61E-01            & 0.52\%                          & 0.0294             \\
+209    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+210    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+211    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+212    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+213    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+214    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+215    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024              \\
+216    & 2.47E+00                    & 99.47\%         & 9.26E-02            & 0.30\%                          & 0.024             
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\section{Especificações Tabela}
+
+\subsection{Código}
+Utilizado para identificação do sessão avaliado para a escolha da bitola do seu cabeamento, de acordo com as regras fornecidas pela organização da competição;
+
+\subsection{Designação}
+sessão analisada;
+
+\subsection{Nó Origem}
+Ponto de partida da corrente da sessão analisada;
+
+\subsection{Nó Destino}
+Ponto de destino da corrente da sessão analisada;
+
+\subsection{Comprimento (m)}
+Comprimento do cabo entre o nó de origem e o nó de destino;
+
+\subsection{Tensão Origem (V)}
+Tensão da sessão avaliada;
+
+\subsection{Corrente Nominal (A)}
+Corrente utilizada para a escolha da bitola do cabo. É feita uma comparação entre a corrente nominal da sessão analisada em relação a corrente nominal estabelecida por tabela disponibilizada pela organização da competição.
+
+\subsection{Corrente Máxima (A)}
+Corrente máxima que pode ser atingida em determinada sessão analisada;
+
+\subsection{Área mínima necessária pelas regras (mm^2)}
+Área da seção trnaversal do cabo mínima que suporta a corrente nominal de cada sessão analisada para a escolha do cabo adequado;
+
+\subsection{Resistência 20°C (\Omega)}
+Resistência do cabo para uma temperatura de 20°C;
+
+\subsection{Resistência 50°C (\Omega)}
+Resistência do cabo para uma temperatura de 50°C;
+
+\subsection{Potência Perdida Nominal (W)}
+Potência perdida em relação à corrente nominal da sessão analisada;
+
+\subsection{Potência Perdida Máxima (W)}
+Potência perdida em relação à corrente máxima da sessão analisada;
+
+\subsection{Eficiência (\%)}
+Porcentagem de eficiência do cabo;
+
+\subsection{Queda de Tensão (V)}
+Queda de tensão no cabo;
+
+\subsection{Queda de tensão percentual (\%)}
+Percentual de quade de tensão em relação à tensao de origem;
+
+\subsection{Massa do cabo (kg)}
+Massa de cabo utilizada em cada sessão.
+
+
+
+
+\end{document}
